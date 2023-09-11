@@ -11,10 +11,13 @@ geinstalleerd is
 in een powershell window als admin (het hekje neem je niet mee want dat is commentaar)
 Install-Module -Name ImportExcel
 
-kolomkoppen (hoofdlettergevoelig) InformatIn.xlsx
-Klas, Klasnummer, Voornaam, Naam, Geslacht, Geboortedatum
+kolomkoppen (hoofdlettergevoelig) BingelIn.xlsx
+Unieke identificatie, Klas, Klasnummer, Voornaam, Naam, Geslacht
 
-Het bestand dat je kan opladen naar Bingel heeft volgende naam: KlasnaarSportimundi-yyyy.xlsx
+kolomkoppen (hoofdlettergevoelig) InformatIn.xlsx
+Klas, Klasnummer, Voornaam, Naam, Geslacht, Geboortedatum, Rijksregisternr.
+
+Het bestand dat je kan opladen naar Bingel heeft volgende naam: naarInformatMetRR-2023.xlsx
 
 InformatNaarSportimundi
 Dit script verwerkt input van Informat en zet dit om naar het gewenste formaat in Sportimundi
