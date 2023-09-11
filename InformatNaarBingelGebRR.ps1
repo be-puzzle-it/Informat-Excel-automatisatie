@@ -310,5 +310,5 @@ $Informat | foreach-object{
 
 #schrijf output in excelbestand in folder met inputbestanden
 $outputfolder = split-path -path $FileInBingel
-$outputbestand = ($outputfolder +"\naarInformatMetRR-"+ (get-date -format("yyyy")).ToString()+".xlsx")
+$outputbestand = ($outputfolder +"\naarBingelMetRR-"+ (get-date -format("yyyy")).ToString()+".xlsx")
 $kinderen |select-object -Property uniekeIdentificatie,klas,klasnummer,voornaam,naam,geslacht,geboortedatum,rijksregisternummer | Export-Excel $outputbestand
