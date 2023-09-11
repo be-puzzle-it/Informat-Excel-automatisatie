@@ -227,44 +227,54 @@ Import-Excel $fileinInformat -OutVariable Informat
 #test of de nodige velden in Bingel In excel bestaan
 if(!($Bingel[0].PSobject.Properties.name -match "naam")){
     write-host "Bingel bestand [$fileinBingel] bevat geen kolom met de kolomkop [naam]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 if(!($Bingel[0].PSobject.Properties.name -match "voornaam")){
     write-host "Bingel bestand [$fileinBingel] bevat geen kolom met de kolomkop [voornaam]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 if(!($Bingel[0].PSobject.Properties.name -match "unieke identificatie")){
     write-host "Bingel bestand [$fileinBingel] bevat geen kolom met de kolomkop [unieke identificatie]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 if(!($Bingel[0].PSobject.Properties.name -match "klas")){
     write-host "Bingel bestand [$fileinBingel] bevat geen kolom met de kolomkop [klas]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"    
     exit(4)
 }
 if(!($Bingel[0].PSobject.Properties.name -match "klasnummer")){
     write-host "Bingel bestand [$fileinBingel] bevat geen kolom met de kolomkop [klasnummer]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 if(!($Bingel[0].PSobject.Properties.name -match "geslacht")){
     write-host "Bingel bestand [$fileinBingel] bevat geen kolom met de kolomkop [geslacht]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 
 #test of de nodige kolomkoppen bestaan in het bestand Informat In
 if(!($Informat[0].PSobject.Properties.name -match "naam")){
     write-host "Informat bestand [$fileinInformat] bevat geen kolom met de kolomkop [naam]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"    
     exit(4)
 }
 if(!($Informat[0].PSobject.Properties.name -match "voornaam")){
     write-host "Informat bestand [$fileinInformat] bevat geen kolom met de kolomkop [voornaam]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 if(!($Informat[0].PSobject.Properties.name -match "geboortedatum")){
     write-host "Informat bestand [$fileinInformat] bevat geen kolom met de kolomkop [geboortedatum]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 if(!($Informat[0].PSobject.Properties.name -match "rijksregisternr.")){
     write-host "Informat bestand [$fileinInformat] bevat geen kolom met de kolomkop [rijksregisternr.]"
+    Read-Host -Prompt "Druk op een toets om af te sluiten"
     exit(4)
 }
 
@@ -312,3 +322,4 @@ $Informat | foreach-object{
 $outputfolder = split-path -path $FileInBingel
 $outputbestand = ($outputfolder +"\naarBingelMetRR-"+ (get-date -format("yyyy")).ToString()+".xlsx")
 $kinderen |select-object -Property uniekeIdentificatie,klas,klasnummer,voornaam,naam,geslacht,geboortedatum,rijksregisternummer | Export-Excel $outputbestand
+Read-Host -Prompt "Druk op een toets om af te sluiten"
